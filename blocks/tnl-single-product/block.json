@@ -1,0 +1,30 @@
+{
+  "name": "acf/tnl-single-product",
+  "title": "Pojedynczy produkt TNL",
+  "description": "A custom tnl-single-product block.",
+  "style": [
+    "file:../../css-blocks/tnl-single-product.css"
+  ],
+  "category": "custom-layout-category",
+  "icon": "admin-site",
+  "keywords": [
+    "column",
+    "column-image"
+  ],
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "tnl-single-product.php"
+  },
+  "align": [
+    "full",
+    "wide"
+  ],
+  "supports": {
+    "anchor": true,
+    "typography": {
+      "lineHeight": true,
+      "fontSize": true
+    },
+    "fullHeight": true
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "name": "acf/tnl-opent-text",
+  "title": "Otwierający teks TNL",
+  "description": "A custom tnl-opent-text block.",
+  "style": [
+    "file:../../css-blocks/tnl-opent-text.css"
+  ],
+  "category": "custom-layout-category",
+  "icon": "admin-site",
+  "keywords": [
+    "open-text"
+  ],
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "tnl-opent-text.php"
+  },
+  "align": "full",
+  "supports": {
+    "anchor": true,
+    "alignContent": false,
+    "alignText": true,
+    "spacing": {
+      "margin": [
+        "top",
+        "bottom"
+      ],
+      "padding": true
+    },
+    "typography": {
+      "lineHeight": true,
+      "fontSize": true
+    },
+    "fullHeight": true
+  }
+}

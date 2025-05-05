@@ -1,0 +1,36 @@
+{
+  "name": "acf/tnl-content-items",
+  "title": "Elementy TNL",
+  "description": "A custom tnl-content-items block.",
+  "style": [
+    "file:../../css-blocks/tnl-content-items.css"
+  ],
+  "category": "custom-layout-category",
+  "icon": "admin-site",
+  "keywords": [
+    "column",
+    "column-image"
+  ],
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "tnl-content-items.php"
+  },
+  "align": "full",
+  "supports": {
+    "anchor": true,
+    "alignContent": false,
+    "alignText": true,
+    "spacing": {
+      "margin": [
+        "top",
+        "bottom"
+      ],
+      "padding": true
+    },
+    "typography": {
+      "lineHeight": true,
+      "fontSize": true
+    },
+    "fullHeight": true
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "name": "acf/tnl-variants-test",
+  "title": "Warianty badania TNL",
+  "description": "A custom tnl-variants-test block.",
+  "style": [
+    "file:../../css-blocks/tnl-variants-test.css"
+  ],
+  "category": "custom-layout-category",
+  "icon": "admin-site",
+  "keywords": [
+    "column",
+    "column-image"
+  ],
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "tnl-variants-test.php"
+  },
+  "align": [
+    "full",
+    "wide"
+  ],
+  "supports": {
+    "anchor": true,
+    "typography": {
+      "lineHeight": true,
+      "fontSize": true
+    },
+    "fullHeight": true
+  }
+}

@@ -1,0 +1,80 @@
+@use "../sass/components/_breakpoints" as b;
+@use "sass:map";
+.tnl-banner {
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 16px;
+    overflow: hidden;
+    @media (min-width: map.get(b.$grid-breakpoints, sm)) {
+      padding: 0;
+    }
+  }
+
+  &__left,
+  &__right {
+    flex: 1 1 100%;
+    @media (min-width: map.get(b.$grid-breakpoints,md )) {
+      max-width: 50%;
+    }
+  }
+  &__left {
+    background: var(--supporting-10);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 30px 20px;
+    @media (min-width: map.get(b.$grid-breakpoints,md )) {
+      gap: 32px;
+      padding: 164px 64px;
+    }
+    @media (max-width: map.get(b.$grid-breakpoints, sm)) {
+      border-top-left-radius: 16px;
+      border-top-right-radius: 16px;
+    }
+    &_button {
+      padding-top: 20px;
+    }
+  }
+
+  &__right {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    min-height: 50vh;
+    @media (max-width: map.get(b.$grid-breakpoints, sm)) {
+      border-bottom-left-radius: 16px;
+      border-bottom-right-radius: 16px;
+    }
+    @media (min-width: map.get(b.$grid-breakpoints, md)) {
+      min-height: 600px;
+    }
+    &_text {
+      display: flex;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(28px);
+      padding: 20px 31px;
+      max-width: 582px;
+      width: 100%;
+      position: absolute;
+      bottom: 27px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 15px;
+      gap: 34px;
+      img {
+        gap: 34px;
+        max-width: 75px;
+        max-height: 75px;
+      }
+      p {
+        font-size: 20px;
+        line-height: 28px;
+        color: #fff;
+        max-width: 320px;
+      }
+    }
+  }
+}

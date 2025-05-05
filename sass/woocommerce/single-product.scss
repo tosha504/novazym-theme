@@ -1,0 +1,44 @@
+@use "../components/__breakpoints" as b;
+@use "sass:map";
+body {
+  &.single-product {
+    .content-area {
+      flex: 1 1 100%;
+    }
+    .wrap-breadcrumb,
+    .wrap-single-product-tnl {
+      background-color: var(--supporting-10);
+    }
+    .wrap-breadcrumb {
+      padding: 20px 0;
+    }
+    .wrap-single-product-tnl {
+      padding-bottom: 54px;
+      .container {
+        background: var(--white);
+        border-radius: 16px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+
+        .woocommerce-product-gallery,
+        .summary {
+          flex: 1 1 100%;
+          @media (min-width: map.get(b.$grid-breakpoints, md)) {
+            max-width: 50%;
+          }
+        }
+
+        .summary {
+          padding: 70px 70px 70px 20px;
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+          h1 {
+            font-size: 32px;
+          }
+        }
+      }
+    }
+  }
+}

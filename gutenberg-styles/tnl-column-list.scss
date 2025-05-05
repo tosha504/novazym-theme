@@ -1,0 +1,38 @@
+.tnl-column-list {
+  &__lists {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+
+    &_item {
+      flex: 1 1 100%;
+      padding: 16px;
+      border-radius: 16px;
+      background-color: #f2f9ff;
+      @media (min-width: 768px) {
+        max-width: calc(50% - 16px);
+        padding: 36px;
+      }
+      &-title {
+        font-size: 24px;
+        font-weight: 600;
+        // margin-bottom: 32px !important;
+        color: #13467b;
+      }
+      &-list {
+        margin-top: 32px;
+        ul {
+          display: flex;
+          padding-left: 1rem;
+          flex-direction: column;
+          gap: 20px;
+          li {
+            &::marker {
+              color: #18bce5;
+            }
+          }
+        }
+      }
+    }
+  }
+}

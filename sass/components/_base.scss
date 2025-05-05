@@ -1,0 +1,105 @@
+@use "./__breakpoints" as b;
+@use "sass:map";
+@use "./heading";
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: var(--inter);
+  width: 100%;
+  position: relative;
+  margin: 0;
+  font-weight: 400;
+  font-size: clamp(14px, 3vw, 16px);
+  color: #577698;
+  line-height: 1.5;
+  scroll-behavior: smooth;
+
+  section {
+    margin: 24px 0 36px;
+  }
+  p {
+    margin-bottom: 0;
+  }
+  img {
+    height: auto;
+  }
+  .button-tnl {
+    background-color: #18bce5;
+    padding: 10px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    color: var(--white);
+  }
+}
+
+.fixed-page {
+  overflow: hidden;
+}
+
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.site-main {
+  flex: 1 1 100%;
+}
+
+.container {
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+
+  @media (min-width: map.get(b.$grid-breakpoints, md)) {
+    max-width: 720px;
+    padding: 0 30px;
+  }
+
+  @media (min-width: map.get(b.$grid-breakpoints, lg)) {
+    max-width: 950px;
+  }
+
+  @media (min-width: map.get(b.$grid-breakpoints, xl)) {
+    max-width: 1200px;
+  }
+
+  @media (min-width: map.get(b.$grid-breakpoints, xxl)) {
+    max-width: 1400px;
+  }
+}
+
+ul {
+  // list-style: none;
+}
+
+button,
+button:active,
+button:focus,
+button:hover,
+input,
+input:active,
+input:focus,
+input:hover,
+textarea,
+textarea:focus {
+  outline: none;
+}
+
+textarea {
+  resize: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}

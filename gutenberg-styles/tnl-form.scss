@@ -1,0 +1,107 @@
+.tnl-form {
+  padding: 64px 0;
+  margin: 0 !important;
+  background-color: #f2f9ff;
+  .container {
+    max-width: 970px;
+    background-color: #fff;
+    padding: 50px 16px;
+    border-radius: 40px;
+
+    // display: flex;
+    // flex-wrap: wrap;
+    // border-radius: 16px;
+    // overflow: hidden;
+    // @media (min-width: 575px) {
+    //   padding: 0;
+    // }
+  }
+  &__top {
+    margin-bottom: 68px;
+  }
+  .wpcf7 {
+  }
+  form {
+    max-width: 720px;
+    margin: 0 auto;
+    // padding: 50px 130px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    .half {
+      max-width: calc(50% - 14px);
+    }
+    .half,
+    .full {
+      flex: 1 1 100%;
+      display: flex;
+      position: relative;
+      P {
+        &,
+        span {
+          width: 100%;
+        }
+
+        label {
+          position: absolute;
+          background-color: #fff;
+          top: -12px;
+          left: 8px;
+          padding: 0 5px;
+          z-index: 3;
+          color: #577698;
+          font-size: 14px;
+        }
+      }
+    }
+
+    input[type="submit"] {
+      background-color: #18bce5;
+      border: none;
+      border-radius: 50px;
+      color: #fff;
+      padding: 8px 30px;
+    }
+  }
+  input[type="text"],
+  input[type="email"],
+  input[type="url"],
+  input[type="password"],
+  input[type="search"],
+  input[type="number"],
+  input[type="tel"],
+  input[type="date"],
+  input[type="month"],
+  input[type="week"],
+  input[type="time"],
+  input[type="datetime"],
+  input[type="datetime-local"],
+  input[type="color"],
+  textarea,
+  select {
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    width: 100%;
+    border: 1px solid #5776984d;
+    font-family: var(--pop);
+    font-size: 16px;
+    background-color: var(--grey5);
+
+    &::placeholder {
+      color: var(--text-20);
+    }
+
+    &:focus {
+      border: 1px solid #18bce5 !important;
+    }
+
+    &.wpcf7-not-valid {
+      border: 1px solid red;
+    }
+  }
+
+  textarea {
+    max-height: 150px;
+  }
+}

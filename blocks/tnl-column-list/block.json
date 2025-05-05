@@ -1,0 +1,36 @@
+{
+  "name": "acf/tnl-column-list",
+  "title": "Kolumy list TNL",
+  "description": "A custom tnl-column-list block.",
+  "style": [
+    "file:../../css-blocks/tnl-column-list.css"
+  ],
+  "category": "custom-layout-category",
+  "icon": "admin-site",
+  "keywords": [
+    "list",
+    "column"
+  ],
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "tnl-column-list.php"
+  },
+  "align": "full",
+  "supports": {
+    "anchor": true,
+    "alignContent": false,
+    "alignText": true,
+    "spacing": {
+      "margin": [
+        "top",
+        "bottom"
+      ],
+      "padding": true
+    },
+    "typography": {
+      "lineHeight": true,
+      "fontSize": true
+    },
+    "fullHeight": true
+  }
+}

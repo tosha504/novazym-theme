@@ -1,0 +1,9 @@
+@use "components/_varibles";
+@use "components/_base";
+@use "components/header";
+@use "components/links";
+@use "components/buttons";
+// @use "components/footer";
+// @use "components/inputs";
+@use "./pages/404.scss" as page404;
+@use "./woocommerce/single-product" as single-product;

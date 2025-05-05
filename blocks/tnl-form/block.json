@@ -1,0 +1,36 @@
+{
+  "name": "acf/tnl-banner",
+  "title": "Banner TNL",
+  "description": "A custom tnl-banner block.",
+  "style": [
+    "file:../../css-blocks/tnl-banner.css"
+  ],
+  "category": "custom-layout-category",
+  "icon": "admin-site",
+  "keywords": [
+    "banner",
+    "banner-left"
+  ],
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "tnl-banner.php"
+  },
+  "align": "full",
+  "supports": {
+    "anchor": true,
+    "alignContent": false,
+    "alignText": true,
+    "spacing": {
+      "margin": [
+        "top",
+        "bottom"
+      ],
+      "padding": true
+    },
+    "typography": {
+      "lineHeight": true,
+      "fontSize": true
+    },
+    "fullHeight": true
+  }
+}

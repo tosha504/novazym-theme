@@ -1,0 +1,10 @@
+a {
+  color: var(--black);
+  &,
+  &:active,
+  &:hover {
+    outline: none;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+}

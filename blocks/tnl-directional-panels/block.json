@@ -1,0 +1,30 @@
+{
+  "name": "acf/tnl-form",
+  "title": "Formularz TNL",
+  "description": "A custom tnl-form block.",
+  "style": [
+    "file:../../css-blocks/tnl-form.css"
+  ],
+  "category": "custom-layout-category",
+  "icon": "admin-site",
+  "keywords": [
+    "tnl-form",
+    "form"
+  ],
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "tnl-form.php"
+  },
+  "align": [
+    "full",
+    "wide"
+  ],
+  "supports": {
+    "anchor": true,
+    "typography": {
+      "lineHeight": true,
+      "fontSize": true
+    },
+    "fullHeight": true
+  }
+}

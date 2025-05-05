@@ -1,0 +1,115 @@
+.tnl-variants-test {
+  .container {
+    background: rgb(21, 70, 122);
+    background: linear-gradient(
+      300deg,
+      rgba(21, 70, 122, 1) 8%,
+      rgba(24, 188, 229, 1) 44%,
+      rgba(21, 70, 122, 1) 90%
+    );
+    border-radius: 16px;
+    padding: 32px 20px;
+    @media (min-width: 1024px) {
+      padding: 48px 0;
+    }
+  }
+  &__top {
+    margin-bottom: 32px;
+  }
+  &__bottom {
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+    &,
+    .item {
+      display: flex;
+    }
+    .item {
+      flex: 1 1 100%;
+      max-width: 324px;
+      flex-direction: column;
+      background-color: #fff;
+      border-radius: 16px;
+      padding: 16px;
+      transition: 0.35s;
+      @media (min-width: 768px) {
+        padding: 30px;
+      }
+      @media (hover: hover) {
+        &:hover {
+          -webkit-box-shadow: 0px 4px 24.1px -13px rgba(13, 42, 73, 0.5);
+          -moz-box-shadow: 0px 4px 24.1px -13px rgba(13, 42, 73, 0.5);
+          box-shadow: 0px 4px 24.1px -13px rgba(13, 42, 73, 0.5);
+        }
+      }
+      &__title {
+        text-align: center;
+        > * {
+          color: #13467b;
+        }
+      }
+      &__title,
+      &__icon {
+        margin-bottom: 24px;
+        @media (min-width: 768px) {
+          margin-bottom: 48px;
+        }
+      }
+      .add_to_cart_inline {
+        display: flex;
+        margin-bottom: 16px;
+        flex-wrap: wrap;
+        gap: 16px;
+        align-items: center;
+        justify-content: center;
+        @media (min-width: 768px) {
+          margin-bottom: 30px;
+        }
+        del {
+          text-decoration: none;
+          .amount {
+            color: #8aa2bc;
+            font-size: 1.44rem;
+            text-decoration: line-through;
+          }
+        }
+        ins {
+          text-decoration: none;
+        }
+        .amount {
+          font-size: 1.8rem;
+          font-weight: 700;
+          line-height: 2.625rem;
+          letter-spacing: normal;
+          color: #18bce5;
+        }
+        .add_to_cart_button {
+          flex: 1 1 100%;
+          background-color: #18bce5;
+          padding: 10px 30px;
+          border-radius: 50px;
+          font-weight: 600;
+          font-size: 17px;
+          color: #fff;
+          text-align: center;
+          @media (hover: hover) {
+            &:hover {
+              background-color: #15467a;
+            }
+          }
+        }
+        .added_to_cart {
+          &.wc-forward {
+            display: none;
+          }
+        }
+      }
+      &__description {
+        p {
+          font-size: 12px;
+          text-align: center;
+        }
+      }
+    }
+  }
+}

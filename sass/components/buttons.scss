@@ -1,0 +1,16 @@
+@use "./_breakpoints" as b;
+@use "sass:map";
+.button {
+  border-radius: 8px;
+  color: black;
+
+  &__primary {
+    padding: 10px 20px;
+
+    @media (max-width: map.get(b.$grid-breakpoints, lg)) {
+      &:hover {
+        color: black;
+      }
+    }
+  }
+}
