@@ -29,3 +29,12 @@ remove_theme_support('wc-product-gallery-slider');
 //Remove actions bht
 remove_action('woocommerce_sidebar', 'woocommerce_get_sidebar', 10);
 add_filter('woocommerce_enqueue_styles', '__return_false');
+
+
+add_action('woocommerce_before_quantity_input_field', function () {
+  echo '<button class="cart-qty minus">-</button>';
+});
+
+add_action('woocommerce_after_quantity_input_field', function () {
+  echo '<button class="cart-qty plus">+</button>';
+});

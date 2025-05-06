@@ -30,12 +30,135 @@ body {
         }
 
         .summary {
-          padding: 70px 70px 70px 20px;
+          // padding: 20px;
           display: flex;
           flex-direction: column;
-          gap: 20px;
+          gap: 10px;
+          padding: 20px 0;
+          @media (min-width: map.get(b.$grid-breakpoints, md)) {
+          }
+          @media (min-width: map.get(b.$grid-breakpoints, lg)) {
+            gap: 20px;
+            padding: 70px 70px 70px 20px;
+          }
           h1 {
-            font-size: 32px;
+            font-size: 24px;
+            @media (min-width: map.get(b.$grid-breakpoints, lg)) {
+              font-size: 32px;
+            }
+          }
+
+          del {
+            text-decoration: none;
+            .amount {
+              color: #8aa2bc;
+              font-size: 1.44rem;
+              text-decoration: line-through;
+            }
+          }
+          ins {
+            text-decoration: none;
+          }
+          .amount {
+            font-size: 1.8rem;
+            font-weight: 700;
+            line-height: 2.625rem;
+            letter-spacing: normal;
+            color: var(--primary-100);
+          }
+
+          .cart {
+            display: flex;
+            gap: 20px;
+            @media (max-width: map.get(b.$grid-breakpoints, lg)) {
+              flex-wrap: wrap;
+            }
+            .quantity {
+              display: flex;
+              flex: 1 1 35%;
+              border: 1px solid var(--text-60);
+              justify-content: space-between;
+              border-radius: 50px;
+              margin-right: 20px !important;
+              background-color: var(--white);
+              overflow: hidden;
+              @media (max-width: map.get(b.$grid-breakpoints, lg)) {
+                max-width: 135px;
+              }
+              button,
+              input {
+                border: none;
+                font-size: 16px;
+                color: var(--text-100);
+              }
+
+              button {
+                // background-color: var(--primary-100);
+                background: none;
+                flex: 1 1 30%;
+                // border: 1px solid var(--text-60);
+                max-width: 100%;
+                width: 15px;
+                padding: 10px;
+                // border-radius: 50px;
+                // border: none;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: 0.25s;
+                // color: var(--white);
+                &.minus {
+                  border-right: 1px solid var(--text-60);
+                }
+                &.plus {
+                  border-left: 1px solid var(--text-60);
+                }
+                @media (hover: hover) {
+                  &:hover {
+                    cursor: pointer;
+                    background-color: var(--supporting-10);
+                  }
+                }
+              }
+
+              input {
+                max-width: 100%;
+                width: 35px;
+                flex: 1 1 20%;
+                pointer-events: none;
+                text-align: center;
+              }
+
+              input::-webkit-outer-spin-button,
+              input::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+              }
+
+              /* Firefox */
+              input[type="number"] {
+                // -moz-appearance: textfield;
+                // pointer-events: none;
+                padding: 0;
+              }
+            }
+
+            .single_add_to_cart_button {
+              flex: 1 1 85%;
+              border-radius: 50px;
+              background-color: var(--primary-100);
+              padding: 10px 30px;
+              font-weight: 600;
+              font-size: 17px;
+              width: 100%;
+              color: #fff;
+              text-align: center;
+              @media (hover: hover) {
+                &:hover {
+                  background-color: var(--primary-90);
+                }
+              }
+            }
           }
         }
       }

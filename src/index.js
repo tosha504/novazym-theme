@@ -45,4 +45,25 @@
     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
   }
 
+
+  //single-page woo
+  jQuery(document).on("click", '.cart-qty.plus, .cart-qty.minus', function (e) {
+    e.preventDefault();
+    const input = jQuery(this).parent().find('.input-text.qty.text');
+    const input_val = parseInt(input.val());
+    if (jQuery(this).hasClass('plus')) {
+      input.val(input_val + 1);
+      input.attr('value', input_val + 1)
+    }
+    else {
+      const new_val = input_val - 1;
+      if (new_val > 0) {
+        input.val(input_val - 1);
+        input.attr('value', input_val - 1)
+      }
+    }
+
+    input.trigger("change");
+  });
+
 })(jQuery);

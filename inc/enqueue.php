@@ -13,7 +13,13 @@ if (!function_exists('start_scripts')) {
 		$theme_uri = get_template_directory_uri();
 		// Custom JS
 		wp_enqueue_script('start_functions', $theme_uri . '/src/index.js', ['jquery'], time(), true);
-
+		if (is_checkout()) {
+			wp_enqueue_script('checkout_script', get_template_directory_uri() . ('/src/add_quantity.js'), array(), false, true);
+			$localize_script = array(
+				'ajax_url' => admin_url('admin-ajax.php')
+			);
+			wp_localize_script('checkout_script', 'add_quantity', $localize_script);
+		}
 		wp_localize_script('start_functions', 'localizedObject', [
 			'ajaxurl' => admin_url('admin-ajax.php'),
 			'nonce' => wp_create_nonce('ajax_nonce'),

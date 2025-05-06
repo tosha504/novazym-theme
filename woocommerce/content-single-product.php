@@ -67,7 +67,11 @@ global $product;
       </div>
     </div>
   </div>
-
+  <div class="template">
+    <div class="container">
+      <?php single_product_acf_templates_left();  ?>
+    </div>
+  </div>
   <?php
   /**
    * Hook: woocommerce_after_single_product_summary.

@@ -1,9 +1,16 @@
 @use "./_breakpoints" as b;
 @use "sass:map";
+button {
+  font-family: var(--inter);
+}
 .button {
   border-radius: 8px;
   color: black;
-
+  border: none;
+  transition: all 0.3s;
+  &:hover {
+    cursor: pointer;
+  }
   &__primary {
     padding: 10px 20px;
 
