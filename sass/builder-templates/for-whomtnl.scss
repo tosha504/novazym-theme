@@ -1,0 +1,29 @@
+@use "../components/__breakpoints" as b;
+@use "sass:map";
+.for_whom_tnl {
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  &__left,
+  &__right {
+    flex: 1 1 100%;
+    padding: 24px;
+    border-radius: 24px;
+    @media (min-width: map.get(b.$grid-breakpoints, lg)) {
+      padding: 48px;
+    }
+  }
+  &__left {
+    @media (min-width: map.get(b.$grid-breakpoints, lg)) {
+      max-width: calc(60% - 8px);
+    }
+  }
+  &__right {
+    @media (min-width: map.get(b.$grid-breakpoints, lg)) {
+      max-width: calc(40% - 8px);
+    }
+  }
+}

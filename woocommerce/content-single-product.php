@@ -68,9 +68,7 @@ global $product;
     </div>
   </div>
   <div class="template">
-    <div class="container">
-      <?php single_product_acf_templates_left();  ?>
-    </div>
+    <?php single_product_acf_templates_left();  ?>
   </div>
   <?php
   /**

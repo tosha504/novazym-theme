@@ -23,15 +23,5 @@ $content = !empty(get_field('content')) ? "<div class='tnl-column-image__left_co
 
 $image = !empty(get_field('image')) ? wp_get_attachment_image(get_field('image'), 'full') : "";
 $image_left = get_field('image_left') !== false ? "style='flex-direction: row-reverse;'" : "";
-$bg_color =  get_field('bg_color') === true ? " gradient" : ""; ?>
-<!-- tnl-column-image start -->
-<section class="tnl-column-image" <?php echo $anchor; ?>>
-  <div class="container <?php echo $bg_color; ?>" <?php echo  $image_left; ?>>
-    <div class="tnl-column-image__left">
-      <?php echo $title . $content; ?>
-    </div>
-    <div class="tnl-column-image__right">
-      <?php echo $image; ?>
-    </div>
-  </div>
-</section><!-- tnl-column-image end -->
+$bg_color =  get_field('bg_color') === true ? " gradient" : "";
+tnl_column_image_block_render_callback($bg_color, $image_left, $title, $content, $image);

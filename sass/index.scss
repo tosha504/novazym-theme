@@ -3,7 +3,16 @@
 @use "components/header";
 @use "components/links";
 @use "components/buttons";
+@use "components/slick.scss";
+
 // @use "components/footer";
 // @use "components/inputs";
+//builder-templates
+@use "./builder-templates/for-whomtnl";
+@use "./builder-templates/gens-tnl";
+@use "./builder-templates/builder-feedback-tnl";
+@use "./builder-templates/builder-faq-tnl.scss";
+
+//pages
 @use "./pages/404.scss" as page404;
 @use "./woocommerce/single-product" as single-product;

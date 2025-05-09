@@ -66,4 +66,37 @@
     input.trigger("change");
   });
 
+  jQuery('.feedback__items').slick({
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    dots: true,
+    arrows: false,
+    infinite: false,
+    swipe: true,
+    responsive: [
+      {
+        breakpoint: 769,
+        settings: {
+          slidesToShow: 2
+        }
+      },
+      {
+        breakpoint: 576,
+        settings: {
+          slidesToShow: 1
+        }
+      }
+    ]
+  })
+
+  jQuery(document).on('click', '.question', function (e) {
+    console.log(jQuery(this).parent().siblings().children('div.answer').is(':visible'));
+    if (jQuery(this).parent().siblings().children('div.answer').is(':visible')) {
+      jQuery(this).parent().siblings().children('.question').children('button').removeClass('active')
+      jQuery(this).parent().siblings().children('div.answer').slideUp(200);
+    }
+    jQuery(this).children('button').toggleClass('active')
+    jQuery(this).siblings('div.answer').slideToggle(200)
+  })
+
 })(jQuery);

@@ -12,7 +12,8 @@ if (!function_exists('start_scripts')) {
 	{
 		$theme_uri = get_template_directory_uri();
 		// Custom JS
-		wp_enqueue_script('start_functions', $theme_uri . '/src/index.js', ['jquery'], time(), true);
+		wp_register_script('slick_theme_functions', $theme_uri . '/libery/slick.min.js', [], false, true);
+		wp_enqueue_script('start_functions', $theme_uri . '/src/index.js', ['jquery', 'slick_theme_functions'], time(), true);
 		if (is_checkout()) {
 			wp_enqueue_script('checkout_script', get_template_directory_uri() . ('/src/add_quantity.js'), array(), false, true);
 			$localize_script = array(

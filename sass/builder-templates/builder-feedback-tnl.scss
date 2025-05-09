@@ -1,0 +1,63 @@
+@use "../components/__breakpoints" as b;
+@use "sass:map";
+.feedback {
+  &__items {
+    padding: 58px 0;
+  }
+  &__item {
+    background: var(--supporting-10);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px;
+
+    @media (min-width: map.get(b.$grid-breakpoints, md)) {
+      padding: 32px;
+    }
+    @media (min-width: map.get(b.$grid-breakpoints, lg)) {
+      padding: 64px;
+    }
+    &:not(:last-child) {
+      margin-right: 12px;
+      @media (min-width: map.get(b.$grid-breakpoints, md)) {
+        margin-right: 24px;
+      }
+    }
+    &_position {
+      @media (min-width: map.get(b.$grid-breakpoints, lg)) {
+        position: relative;
+        &::before {
+          content: "";
+          position: absolute;
+          top: -40px;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          width: 40px;
+          height: 30px;
+          background: url(../assets/feed-icon.svg) no-repeat center center;
+          z-index: 1;
+        }
+      }
+    }
+    &_text {
+      font-weight: 600;
+      color: var(--black);
+    }
+  }
+  .slick-dots {
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 16px;
+    @media (min-width: map.get(b.$grid-breakpoints, md)) {
+      margin-top: 32px;
+    }
+    li {
+      background-color: #c1d5e6;
+      &.slick-active {
+        background-color: var(--secondary-100);
+      }
+    }
+  }
+}
