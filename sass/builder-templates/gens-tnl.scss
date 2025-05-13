@@ -16,13 +16,16 @@
     &_left {
       border-top-left-radius: 24px;
       border-top-right-radius: 24px;
-
       background: linear-gradient(
         150deg,
         rgba(21, 70, 122, 1) 0%,
         rgba(21, 70, 122, 1) 50%,
         rgba(0, 212, 255, 1) 100%
       );
+      img {
+        max-width: 100px;
+        margin-bottom: 16px;
+      }
       @media (min-width: map.get(b.$grid-breakpoints, lg)) {
         max-width: calc(25% - 8px);
         border-top-right-radius: 0px;

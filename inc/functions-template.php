@@ -39,6 +39,10 @@ function single_product_acf_templates_left()
         get_template_part('builder-templates/single-product-page/builder-feedback-tnl');
       } elseif (get_row_layout() == 'faq') {
         get_template_part('builder-templates/single-product-page/builder-faq-tnl');
+      } elseif (get_row_layout() == 'table_prod') {
+        get_template_part('builder-templates/single-product-page/table-prod-tnl');
+      } elseif (get_row_layout() == 'form_prod') {
+        get_template_part('builder-templates/single-product-page/form-prod-tnl');
       }
     }
   }

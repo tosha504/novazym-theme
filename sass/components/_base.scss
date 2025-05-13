@@ -32,6 +32,10 @@ body {
   }
   section {
     margin: 24px 0 36px;
+    padding: 10px 0;
+    @media (min-width: map.get(b.$grid-breakpoints, md)) {
+      padding: 16px 0px;
+    }
   }
   p {
     margin-bottom: 0;

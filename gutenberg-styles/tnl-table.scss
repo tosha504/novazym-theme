@@ -1,0 +1,101 @@
+@use "../sass/components/_breakpoints" as b;
+@use "sass:map";
+.tnl-table {
+  background: linear-gradient(
+    150deg,
+    rgba(21, 70, 122, 1) 0%,
+    rgba(21, 70, 122, 1) 50%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  padding: 55px 0;
+  border-radius: 20px;
+
+  &__title {
+    max-width: 780px;
+    margin: 0 auto 30px;
+  }
+
+  &__content {
+    max-width: 830px;
+    margin: 0 auto 30px;
+  }
+  .acf-table-grid {
+    display: flex;
+    overflow: hidden;
+    flex-wrap: wrap;
+    &:first-child {
+      background: var(--primary-100);
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+      .acf-cell {
+        font-weight: bold;
+        color: var(--white);
+        &:last-child {
+          display: flex;
+          justify-content: space-between;
+          flex-wrap: wrap;
+          #pagination-controls {
+            display: flex;
+            gap: 10px;
+            button {
+              background-color: var(--supporting-10);
+              width: 29px;
+              max-width: 100%;
+              height: 29px;
+              max-height: 29px;
+              border-radius: 50px;
+              border: none;
+              background-position: center;
+              background-repeat: no-repeat;
+
+              &:disabled {
+                opacity: 0.7;
+              }
+              &#prevBtn {
+                background-image: url("../assets/icons/arrow-right.svg");
+              }
+              &#nextBtn {
+                background-image: url("../assets/icons/arrow-left.svg");
+              }
+              @media (hover: hover) {
+                &:hover {
+                  cursor: pointer;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    &:last-child {
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+    }
+    &:not(:first-child) {
+      .acf-cell {
+        &:nth-child(n + 1):nth-child(-n + 3),
+        &:nth-child(n + 7):nth-child(-n + 9),
+        &:nth-child(n + 13):nth-child(-n + 15),
+        &:nth-child(n + 19):nth-child(-n + 21),
+        &:nth-child(n + 25):nth-child(-n + 27) {
+          background-color: var(--white);
+        }
+        &:nth-child(n + 4):nth-child(-n + 6),
+        &:nth-child(n + 10):nth-child(-n + 12),
+        &:nth-child(n + 16):nth-child(-n + 18),
+        &:nth-child(n + 22):nth-child(-n + 24),
+        &:nth-child(n + 28):nth-child(-n + 30) {
+          background-color: var(--supporting-10);
+        }
+      }
+    }
+    .acf-cell {
+      flex: 1 1 100%;
+      max-width: calc(100% / 3);
+      padding: 8px;
+      @media (min-width: map.get(b.$grid-breakpoints, md)) {
+        padding: 16px 24px;
+      }
+    }
+  }
+}

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Form TNL Block template.
+ * Table TNL Block template.
  *
  * @param   array $block The block settings and attributes.
  * @param   string $content The block inner HTML (empty).
@@ -18,6 +18,8 @@ $anchor = '';
 if (!empty($block['anchor'])) {
   $anchor = 'id="' . esc_attr($block['anchor']) . '" ';
 }
-$title = !empty(get_field('Content_before_form')) ? "<div class='tnl-form__top_title'>" . get_field('Content_before_form') . "</div> " : "";
-$shortcode = !empty(get_field('shortcode')) ? get_field('shortcode') : "";
-tnl_form_render_callback($anchor, $title, $shortcode);
+$title = !empty(get_field('title')) ? "<div class='tnl-table__title'>" . get_field('title') . "</div> " : "";
+$content = !empty(get_field('description')) ? "<div class='tnl-table__content'>" . get_field('description') . "</div> " : "";
+$rows = get_field('tabel'); // Get all rows
+
+tnl_table_render_callback($title, $content, $rows);
