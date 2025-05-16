@@ -1,0 +1,7 @@
+@use "../sass/components/_breakpoints" as b;
+@use "sass:map";
+.trusted-tnl {
+  &__title {
+    margin-bottom: 40px;
+  }
+}

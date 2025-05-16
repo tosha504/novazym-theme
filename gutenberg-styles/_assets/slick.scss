@@ -158,28 +158,28 @@
 //     }
 // }
 
-.slick-dots {
-  display: flex;
-  position: absolute;
-  border: none;
+// .slick-dots {
+//   display: flex;
+//   position: absolute;
+//   border: none;
 
-  list-style: none;
-  li {
-    margin: 0 5px;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: #ccc;
-    transition: 0.3s;
-    button {
-      display: none;
-    }
-    &.slick-active {
-      background-color: var(--dark-green);
-    }
-    &:hover {
-      cursor: pointer;
-      background-color: var(--dark-green-hover);
-    }
-  }
-}
+//   list-style: none;
+//   li {
+//     margin: 0 5px;
+//     width: 10px;
+//     height: 10px;
+//     border-radius: 50%;
+//     background-color: #ccc;
+//     transition: 0.3s;
+//     button {
+//       display: none;
+//     }
+//     &.slick-active {
+//       background-color: #ffffff10;
+//     }
+//     &:hover {
+//       cursor: pointer;
+//       background-color: #ffffff60;
+//     }
+//   }
+// }

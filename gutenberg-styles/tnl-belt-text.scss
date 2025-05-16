@@ -1,0 +1,29 @@
+@use "../sass/components/_breakpoints" as b;
+@use "sass:map";
+
+.tnl-belt-text {
+  &__wrap {
+    display: flex;
+    align-items: center;
+    background-color: var(--supporting-10);
+    border-radius: 16px;
+    padding: 16px;
+    gap: 20px;
+    flex-wrap: wrap;
+    @media (min-width: map.get(b.$grid-breakpoints, lg)) {
+      padding: 30px;
+      gap: 40px;
+    }
+    img {
+      max-width: 53px;
+    }
+    &__title {
+      color: var(--secondary-100);
+    }
+    .button {
+      @media (min-width: map.get(b.$grid-breakpoints, lg)) {
+        margin-left: auto;
+      }
+    }
+  }
+}

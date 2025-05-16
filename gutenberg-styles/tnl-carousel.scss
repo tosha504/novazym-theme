@@ -1,0 +1,74 @@
+@use "../sass/components/_breakpoints" as b;
+@use "sass:map";
+.tnl-carousel {
+  .slick-dots {
+    left: 80px;
+    bottom: 40px;
+    padding-left: 0;
+    li {
+      width: 35px;
+      border-radius: 5px;
+      height: 4px;
+    }
+  }
+  .slide {
+    &__wrap {
+      display: flex;
+      flex-wrap: wrap;
+      border-radius: 16px;
+      overflow: hidden;
+      @media (min-width: map.get(b.$grid-breakpoints, sm)) {
+        padding: 0;
+      }
+    }
+
+    &__left,
+    &__right {
+      flex: 1 1 100%;
+      @media (min-width: map.get(b.$grid-breakpoints,md )) {
+        max-width: 50%;
+      }
+    }
+    &__left {
+      background: linear-gradient(
+        45deg,
+        rgba(21, 70, 122, 1) 0%,
+        rgba(21, 70, 122, 1) 52%,
+        rgba(0, 212, 255, 1) 100%
+      );
+
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      padding: 30px 20px;
+      @media (min-width: map.get(b.$grid-breakpoints,md )) {
+        gap: 32px;
+        padding: 124px 64px;
+      }
+      @media (max-width: map.get(b.$grid-breakpoints, sm)) {
+        border-top-left-radius: 16px;
+        border-top-right-radius: 16px;
+      }
+
+      &_button {
+        padding-top: 20px;
+      }
+    }
+
+    &__right {
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: relative;
+      gap: 34px;
+      min-height: 25vh;
+      @media (max-width: map.get(b.$grid-breakpoints, sm)) {
+        border-bottom-left-radius: 16px;
+        border-bottom-right-radius: 16px;
+      }
+      @media (min-width: map.get(b.$grid-breakpoints, md)) {
+        min-height: 600px;
+      }
+    }
+  }
+}

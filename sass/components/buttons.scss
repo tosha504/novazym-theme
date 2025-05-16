@@ -8,15 +8,31 @@ button {
   color: black;
   border: none;
   transition: all 0.3s;
+  padding: 10px 20px;
+
   &:hover {
     cursor: pointer;
   }
   &__primary {
     padding: 10px 20px;
+    background-color: red;
 
     @media (max-width: map.get(b.$grid-breakpoints, lg)) {
       &:hover {
         color: black;
+      }
+    }
+  }
+
+  &__secondary {
+    border: 2px solid var(--secondary-100);
+    color: var(--secondary-100);
+    font-weight: 600;
+    border-radius: 50px;
+    @media (hover: hover) {
+      &:hover {
+        color: var(--white);
+        background: var(--secondary-100);
       }
     }
   }

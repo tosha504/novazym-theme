@@ -1,0 +1,35 @@
+{
+  "name": "acf/tnl-belt-text",
+  "title": "Tekst paska TNL",
+  "description": "A custom tnl-belt-text block.",
+  "style": [
+    "file:../../css-blocks/tnl-belt-text.css"
+  ],
+  "category": "custom-layout-category",
+  "icon": "admin-site",
+  "keywords": [
+    "tnl-belt-text"
+  ],
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "tnl-belt-text.php"
+  },
+  "align": "full",
+  "supports": {
+    "anchor": true,
+    "alignContent": false,
+    "alignText": true,
+    "spacing": {
+      "margin": [
+        "top",
+        "bottom"
+      ],
+      "padding": true
+    },
+    "typography": {
+      "lineHeight": true,
+      "fontSize": true
+    },
+    "fullHeight": true
+  }
+}

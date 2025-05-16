@@ -1,0 +1,66 @@
+@use "../sass/components/_breakpoints" as b;
+@use "sass:map";
+.news-block-tnl {
+  &__title {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  &__newses {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    .news {
+      -webkit-box-shadow: 2px 2px 8px -6px rgba(0, 29, 58, 0.7);
+      -moz-box-shadow: 2px 2px 8px -6px rgba(0, 29, 58, 0.7);
+      box-shadow: 2px 2px 8px -6px rgba(0, 29, 58, 0.7);
+      overflow: hidden;
+      border-radius: 20px;
+      display: flex;
+      flex-direction: column;
+      flex: 1 1 100%;
+      @media (max-width: map.get(b.$grid-breakpoints, sm)) {
+        img {
+          width: 100%;
+        }
+      }
+      @media (min-width: map.get(b.$grid-breakpoints, sm)) {
+        max-width: calc((100% / 2) - 16px);
+      }
+      @media (min-width: map.get(b.$grid-breakpoints, lg)) {
+        max-width: calc((100% / 3) - 16px);
+      }
+
+      &__content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        flex: 1 1 100%;
+        padding: 16px;
+        @media (min-width: map.get(b.$grid-breakpoints, lg)) {
+          padding: 30px;
+        }
+        h4 {
+          font-weight: 600;
+          color: var(--black);
+          font-size: 20px;
+          @media (min-width: map.get(b.$grid-breakpoints, lg)) {
+            font-size: 22px;
+          }
+        }
+        &_link {
+          margin-top: auto;
+          text-transform: uppercase;
+          color: var(--primary-100);
+          font-weight: 700;
+        }
+      }
+    }
+  }
+
+  &__button {
+    margin: 40px auto 0;
+    display: flex;
+    justify-content: center;
+  }
+}

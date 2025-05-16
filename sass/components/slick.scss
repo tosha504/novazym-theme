@@ -169,17 +169,17 @@
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background-color: #ccc;
+    background-color: #ffffff60;
+
     transition: 0.3s;
     button {
       display: none;
     }
     &.slick-active {
-      background-color: var(--dark-green);
+      background-color: #ffffff10;
     }
     &:hover {
       cursor: pointer;
-      background-color: var(--dark-green-hover);
     }
   }
 }

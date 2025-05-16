@@ -1,0 +1,40 @@
+{
+  "name": "acf/tnl-carousel",
+  "title": "Karuzela TNL",
+  "description": "A custom tnl-carousel block.",
+  "style": [
+    "file:../../css-blocks/tnl-carousel.css"
+  ],
+  "category": "custom-layout-category",
+  "icon": "admin-site",
+  "keywords": [
+    "carousel"
+  ],
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "tnl-carousel.php"
+  },
+  "align": "full",
+  "supports": {
+    "anchor": true,
+    "alignContent": false,
+    "color": {
+      "text": true,
+      "background": true,
+      "link": true
+    },
+    "alignText": true,
+    "spacing": {
+      "margin": [
+        "top",
+        "bottom"
+      ],
+      "padding": true
+    },
+    "typography": {
+      "lineHeight": true,
+      "fontSize": true
+    },
+    "fullHeight": true
+  }
+}

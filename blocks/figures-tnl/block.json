@@ -1,0 +1,35 @@
+{
+  "name": "acf/figures-tnl",
+  "title": "Liczby TNL",
+  "description": "A custom figures-tnl block.",
+  "style": [
+    "file:../../css-blocks/figures-tnl.css"
+  ],
+  "category": "custom-layout-category",
+  "icon": "admin-site",
+  "keywords": [
+    "tiles"
+  ],
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "figures-tnl.php"
+  },
+  "align": "full",
+  "supports": {
+    "anchor": true,
+    "alignContent": false,
+    "alignText": true,
+    "spacing": {
+      "margin": [
+        "top",
+        "bottom"
+      ],
+      "padding": true
+    },
+    "typography": {
+      "lineHeight": true,
+      "fontSize": true
+    },
+    "fullHeight": true
+  }
+}

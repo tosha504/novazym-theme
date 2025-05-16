@@ -1,0 +1,35 @@
+{
+  "name": "acf/trusted-tnl",
+  "title": "Zaufali TNL",
+  "description": "A custom trusted-tnl block.",
+  "style": [
+    "file:../../css-blocks/trusted-tnl.css"
+  ],
+  "category": "custom-layout-category",
+  "icon": "admin-site",
+  "keywords": [
+    "tiles"
+  ],
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "trusted-tnl.php"
+  },
+  "align": "full",
+  "supports": {
+    "anchor": true,
+    "alignContent": false,
+    "alignText": true,
+    "spacing": {
+      "margin": [
+        "top",
+        "bottom"
+      ],
+      "padding": true
+    },
+    "typography": {
+      "lineHeight": true,
+      "fontSize": true
+    },
+    "fullHeight": true
+  }
+}

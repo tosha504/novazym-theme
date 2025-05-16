@@ -1,0 +1,35 @@
+@use "../sass/components/_breakpoints" as b;
+@use "sass:map";
+.figures-tnl {
+  &__fields {
+    padding: 64px 0;
+    background: linear-gradient(270deg, #18bce5, #15467a 70%);
+    display: flex;
+    border-radius: 16px;
+    flex-wrap: wrap;
+    gap: 16px;
+
+    &_field {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      gap: 12px;
+      flex: 1 1 100%;
+      text-align: center;
+      color: var(--white);
+      @media (min-width: map.get(b.$grid-breakpoints, sm)) {
+        max-width: calc((100% / 2) - 12px);
+      }
+      @media (min-width: map.get(b.$grid-breakpoints, lg)) {
+        max-width: calc((100% / 4) - 12px);
+      }
+      .numbers {
+        font-size: 42px;
+        font-weight: 700;
+      }
+      .descr {
+        font-size: 22px;
+      }
+    }
+  }
+}
