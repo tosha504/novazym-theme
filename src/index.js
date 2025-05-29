@@ -2,7 +2,7 @@
   console.log('ready');
   const burger = jQuery(".burger"),
     burgerSpan = jQuery(".burger span"),
-    nav = jQuery('.header__nav'),
+    nav = jQuery('#site-navigation'),
     body = jQuery('body');
 
   burger.on("click", function () {
@@ -49,6 +49,8 @@
   //single-page woo
   jQuery(document).on("click", '.cart-qty.plus, .cart-qty.minus', function (e) {
     e.preventDefault();
+    console.log(e);
+
     const input = jQuery(this).parent().find('.input-text.qty.text');
     const input_val = parseInt(input.val());
     if (jQuery(this).hasClass('plus')) {
@@ -65,7 +67,15 @@
 
     input.trigger("change");
   });
-
+  let timeout;
+  jQuery('.woocommerce').on('change', 'input.qty', function () {
+    if (timeout !== undefined) {
+      clearTimeout(timeout);
+    }
+    timeout = setTimeout(function () {
+      jQuery("[name='update_cart']").trigger("click"); // trigger cart update
+    }, 50); // 1 second delay, half a second (500) seems comfortable too
+  });
   jQuery('.feedback__items').slick({
     slidesToShow: 2,
     slidesToScroll: 1,

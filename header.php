@@ -47,14 +47,30 @@
 						array(
 							'theme_location' => 'menu-header',
 							'container' => false,
-							'menu_id' => 'primary-menu1',
+							'menu_id' => 'primary-menu',
 							'menu_class' => 'header__nav',
+						),
+					);
+					wp_nav_menu(
+						array(
+							'theme_location' => 'header-btn',
+							'container' => false,
+							'menu_id' => 'primary-menu1',
+							'menu_class' => 'header__nav_buttons',
 						),
 					);
 					?>
 				</nav><!-- #site-navigation -->
-
+				<div class="header__bag">
+					<a href="<?php echo wc_get_cart_url(); ?>" class="cart-bag"><span class="count">
+							<?php
+							global $woocommerce;
+							echo sprintf($woocommerce->cart->cart_contents_count);
+							?>
+						</span></a>
+				</div>
 				<button class="burger"
 					aria-label="Open the menu"><span></span><span></span><span></span></button><!-- burger -->
 			</div>
+
 		</header><!-- #masthead -->

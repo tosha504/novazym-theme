@@ -3,10 +3,11 @@
 @use "components/header";
 @use "components/links";
 @use "components/buttons";
-@use "components/slick.scss";
+@use "components/slick";
+@use "components/footer";
+@use "components/inputs";
 
 // @use "components/footer";
-// @use "components/inputs";
 //builder-templates
 @use "./builder-templates/for-whomtnl";
 @use "./builder-templates/gens-tnl";
@@ -16,3 +17,9 @@
 //pages
 @use "./pages/404.scss" as page404;
 @use "./woocommerce/single-product" as single-product;
+
+//woocommerce
+@use "./woocommerce/cart" as cart;
+// @use "./woocommerce/woocommerce-cart.scss" as wcart;
+@use "./woocommerce/woocommerce-checkout" as checkout;
+@use "./woocommerce/shop-page" as shop;

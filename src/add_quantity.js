@@ -1,4 +1,5 @@
 jQuery(function (jQuery) {
+
   jQuery("form.checkout").on("change", ".input-text.qty.text", function (e) {
     var data = {
       action: 'update_order_review',
@@ -8,7 +9,6 @@ jQuery(function (jQuery) {
       post_data: jQuery('form.checkout').serialize()
     };
     jQuery.post(add_quantity.ajax_url, data, function (response) {
-      // console.log(response);
       jQuery(document.body).trigger('update_checkout', response);
     });
   });

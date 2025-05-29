@@ -1,0 +1,161 @@
+@use "./../components/_breakpoints" as b;
+@use "sass:map";
+body {
+  &.post-type-archive-product {
+    .shop-banner-tnl {
+      background-color: var(--supporting-10);
+      color: #15467a;
+      padding: 50px 0;
+      border-radius: 16px;
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+    .products-wrap-tnl {
+      padding: 20px 0;
+      display: flex;
+      align-items: center;
+      .woocommerce-result-count {
+        color: var(--secondary-100);
+        font-weight: 600;
+      }
+      .woocommerce-ordering {
+        margin-left: auto;
+        .orderby {
+          border-radius: 50px;
+          -webkit-box-sizing: border-box;
+          -moz-box-sizing: border-box;
+          box-sizing: border-box;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          background-image: linear-gradient(45deg, transparent 50%, black 50%),
+            linear-gradient(135deg, black 50%, transparent 50%),
+            linear-gradient(to right, white, white);
+          background-position: calc(100% - 20px) calc(1em + 2px),
+            calc(100% - 15px) calc(1em + 2px), 100% 0;
+          background-size: 5px 5px, 5px 5px, 2.5em 2.5em;
+          background-repeat: no-repeat;
+          padding: 0.5em 3.5em 0.5em 1em;
+        }
+      }
+    }
+    .shop-tnl {
+      padding: 20px 0 50px;
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      .product {
+        border: 1px solid var(--supporting-20);
+        border-radius: 16px;
+        flex: 1 1 100%;
+        display: flex;
+        flex-direction: column;
+        @media (min-width: map.get(b.$grid-breakpoints, sm)) {
+          max-width: calc(100% / 2 - 20px);
+        }
+        @media (min-width: map.get(b.$grid-breakpoints, lg)) {
+          max-width: calc(100% / 3 - 20px);
+        }
+        @media (min-width: map.get(b.$grid-breakpoints, xl)) {
+          max-width: calc(100% / 4 - 20px);
+        }
+        h2 {
+          font-size: 16px;
+        }
+        &__wrap-image {
+          display: flex;
+          align-items: center;
+          padding: 20px;
+          img {
+            border-radius: 16px;
+            width: 100%;
+          }
+        }
+        &__wrap-body {
+          padding: 20px;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 10px;
+          &_excerpt {
+            flex: 1 1 100%;
+            color: #15467a;
+            font-size: 14px;
+          }
+          &_price {
+            del {
+              text-decoration: none;
+              .amount {
+                color: #8aa2bc;
+                font-size: 1.44rem;
+                text-decoration: line-through;
+              }
+            }
+            ins {
+              text-decoration: none;
+            }
+            .amount {
+              font-size: 1.8rem;
+              font-weight: 700;
+              line-height: 2.625rem;
+              letter-spacing: normal;
+              color: #18bce5;
+            }
+          }
+        }
+
+        .button {
+          text-align: center;
+          font-size: 15px;
+          color: var(--secondary-100);
+          border: 1px solid var(--secondary-100);
+          border-radius: 50px;
+          font-weight: 600;
+          margin: auto 20px 20px;
+          @media (min-width: map.get(b.$grid-breakpoints, lg)) {
+            padding: 5px 15px;
+          }
+          @media (hover: hover) {
+            &:hover {
+              color: var(--white);
+              background: var(--secondary-100);
+            }
+          }
+        }
+      }
+    }
+
+    .woocommerce-pagination {
+      margin: 20px 0;
+      .page-numbers {
+        border: none;
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        gap: 5px;
+        align-items: center;
+        li {
+          color: var(--secondary-100);
+          [aria-current] {
+            background: var(--supporting-10);
+            border-radius: 10px;
+            padding: 5px 10px;
+          }
+
+          a {
+            padding: 5px 10px;
+            border-radius: 10px;
+
+            @media (hover: hover) {
+              &:hover {
+                background: var(--primary-90);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,5 +1,6 @@
 @use "./_breakpoints" as b;
 @use "sass:map";
+@use "./burger.scss";
 .header {
   padding: 20px 0;
   position: sticky;
@@ -11,17 +12,74 @@
   }
 
   .container,
-  &__nav {
+  nav {
     display: flex;
     align-items: center;
     gap: 10px;
-
-    @media (min-width: map.get(b.$grid-breakpoints, md)) {
-      gap: 30px;
-    }
   }
 
   &__nav {
+    &,
+    &_buttons {
+      display: flex;
+      gap: 16px;
+      @media (max-width: map.get(b.$grid-breakpoints, xl)) {
+        flex-direction: column;
+      }
+    }
+    a {
+      color: #15467a;
+      line-height: 24px;
+      font-size: 15px;
+      font-weight: 600;
+      transition: 0.3s;
+      border-bottom: 2px solid transparent;
+      @media (hover: hover) {
+        &:hover {
+          border-color: var(--primary-100);
+        }
+      }
+    }
+    &_buttons {
+      gap: 10px;
+      .button__secondary {
+        @media (min-width: map.get(b.$grid-breakpoints, lg)) {
+          padding: 5px 15px;
+        }
+        a {
+          text-align: center;
+          font-size: 15px;
+          color: var(--secondary-100);
+        }
+        @media (hover: hover) {
+          &:hover {
+            a {
+              color: var(--white);
+            }
+          }
+        }
+      }
+      .button-tnl {
+        @media (min-width: map.get(b.$grid-breakpoints, lg)) {
+          padding: 5px 15px;
+        }
+        a {
+          font-size: 15px;
+          color: var(--white);
+        }
+        @media (hover: hover) {
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+      @media (max-width: map.get(b.$grid-breakpoints, xl)) {
+        margin-top: auto;
+      }
+    }
+  }
+
+  nav {
     [aria-current] {
       @media (hover: hover) {
         &:hover {
@@ -29,73 +87,61 @@
       }
     }
 
-    a {
-      color: black;
-      line-height: 24px;
-      font-size: 13px;
-      font-weight: 400;
-
-      @media (hover: hover) {
-        &:hover {
-        }
-      }
-    }
-  }
-
-  //__mobile
-  &__nav {
     @media (max-width: map.get(b.$grid-breakpoints, xl)) {
       padding: 50px;
-      // background-color: $primaryTheme;
+      background-color: var(--supporting-10);
       position: fixed;
       left: -100%;
       top: 0;
       bottom: 0;
-      width: 80%;
+      width: 70%;
       z-index: 1000;
       flex-direction: column;
       align-items: start;
       overflow: auto;
       transition: all 0.5s;
+      border-radius: 20px;
 
       &.active {
         left: 0;
-
-        a {
-          font-size: 16px;
-        }
       }
     }
-
-    // ul {
-    //   display: flex;
-    //   flex-direction: column;
-    //   gap: 20px;
-    //   align-items: flex-start;
-
-    //   &.sub-menu {
-    //     display: none;
-    //     padding: 5px 0;
-    //     margin-left: 20px;
-    //     li {
-    //       padding: 5px 0;
-    //       a {
-    //         white-space: nowrap;
-    //       }
-    //     }
-
-    //   }
-    // }
-
-    //if have submenu
-    // .menu-item-has-children {
-    // 	a {
-    // 		display: flex;
-    // 		align-items: center;
-    // 		align-items: center;
-    // 		flex-direction: row-reverse;
-    // 		justify-content: flex-end;
-    // 	}
-    // }
+    @media (max-width: map.get(b.$grid-breakpoints, sm)) {
+      padding: 20px;
+    }
+  }
+  &__bag {
+    @media (max-width: map.get(b.$grid-breakpoints, xl)) {
+      margin-left: auto;
+    }
+    .cart-bag {
+      width: 40px;
+      height: 40px;
+      background-color: var(--secondary-100);
+      background-image: url("../assets/icons/cart.svg");
+      background-position: center;
+      background-repeat: no-repeat;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50px;
+      display: flex;
+      position: relative;
+      .count {
+        position: absolute;
+        top: -5px;
+        right: -5px;
+        background-color: var(--white);
+        color: var(--secondary-100);
+        font-size: 11px;
+        font-weight: 600;
+        box-shadow: 0px 0px 20px 0px rgba(66, 68, 90, 0.15);
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
   }
 }
