@@ -58,7 +58,7 @@ function woocommerce_header_add_to_cart_fragment($fragments)
   return $fragments;
 }
 add_action('woocommerce_before_checkout_form', function () {
-  echo '<div class="container">sdfsdf';
+  echo '<div class="container">';
 }, 1);
 
 add_action('woocommerce_after_checkout_form', function () {
@@ -107,3 +107,9 @@ add_action('woocommerce_before_cart', function () {
 add_action('woocommerce_before_cart', function () {
   echo '</div>';
 }, 15);
+add_action('woocommerce_cart_is_empty', function () {
+  echo '<div class="container">';
+}, 1);
+add_action('woocommerce_cart_is_empty', function () {
+  echo '</div >';
+}, 11);

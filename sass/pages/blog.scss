@@ -1,0 +1,83 @@
+@use "./../components/_breakpoints" as b;
+@use "sass:map";
+body {
+  &.blog,
+  &.category {
+    .popular-wrap,
+    .category-header {
+      background-color: var(--supporting-10);
+      padding: 50px 0;
+      h1 {
+        margin-bottom: 50px;
+        color: var(--secondary-100);
+        text-align: center;
+      }
+    }
+    .popular-posts {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+      padding-left: 0;
+      li {
+        flex: 1 1 100%;
+        @media (min-width: map.get(b.$grid-breakpoints, sm)) {
+          max-width: calc((100% / 2) - 16px);
+        }
+        @media (min-width: map.get(b.$grid-breakpoints, lg)) {
+          max-width: calc((100% / 3) - 16px);
+        }
+      }
+    }
+    .posts-categories,
+    .categories-wrap .container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .categories-wrap {
+      padding: 50px 0 0;
+    }
+    .categories-title {
+      @media (max-width: map.get(b.$grid-breakpoints, md)) {
+        margin-bottom: 20px;
+      }
+    }
+    .posts-categories {
+      display: flex;
+      list-style: none;
+      padding-left: 0;
+      gap: 30px 10px;
+    }
+
+    .news-block-tnl__newses {
+      padding: 50px 0;
+    }
+
+    .navigation {
+      padding-bottom: 50px;
+      .nav-links {
+        border: none;
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: var(--secondary-100);
+        [aria-current] {
+          background: var(--supporting-10);
+          border-radius: 10px;
+          padding: 5px 10px;
+        }
+        a {
+          padding: 5px 10px;
+          border-radius: 10px;
+          @media (hover: hover) {
+            &:hover {
+              background: var(--primary-90);
+            }
+          }
+        }
+      }
+    }
+  }
+}

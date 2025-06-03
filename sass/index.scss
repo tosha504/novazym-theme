@@ -16,6 +16,8 @@
 
 //pages
 @use "./pages/404.scss" as page404;
+@use "./pages/blog" as blog;
+
 @use "./woocommerce/single-product" as single-product;
 
 //woocommerce

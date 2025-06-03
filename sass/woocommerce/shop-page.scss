@@ -4,9 +4,11 @@ body {
   &.post-type-archive-product {
     .shop-banner-tnl {
       background-color: var(--supporting-10);
-      color: #15467a;
       padding: 50px 0;
       border-radius: 16px;
+      h1 {
+        color: var(--secondary-100);
+      }
       .container {
         display: flex;
         justify-content: center;
@@ -97,7 +99,7 @@ body {
               text-decoration: none;
             }
             .amount {
-              font-size: 1.8rem;
+              font-size: 1.3rem;
               font-weight: 700;
               line-height: 2.625rem;
               letter-spacing: normal;

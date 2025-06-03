@@ -77,3 +77,47 @@ function update_order_review()
 	// woocommerce_cart_totals();
 	wp_die();
 }
+function implement_ajax_apply_coupon()
+{
+	global $woocommerce;
+	$code = filter_input(INPUT_POST, 'coupon_code', FILTER_DEFAULT);
+
+	if (empty($code) || !isset($code)) {
+		$response = array(
+			'result'    => 'error',
+			'message'   => 'Code text field can not be empty.'
+		);
+
+		header('Content-Type: application/json');
+		echo json_encode($response);
+		exit();
+	}
+
+	$coupon = new WC_Coupon($code);
+
+	if (!$coupon->id && !isset($coupon->id)) {
+		$response = array(
+			'result'    => 'error',
+			'message'   => 'Invalid code entered. Please try again.'
+		);
+
+		header('Content-Type: application/json');
+		echo json_encode($response);
+		exit();
+	} else {
+		if (!empty($code) && !WC()->cart->has_discount($code)) {
+			WC()->cart->add_discount($code);
+			$response = array(
+				'result'    => 'success',
+				'message'   => 'successfully added coupon code'
+			);
+
+			header('Content-Type: application/json');
+			echo json_encode($response);
+			exit();
+		}
+	}
+}
+
+add_action('wp_ajax_ajaxapplucoupon', 'implement_ajax_apply_coupon');
+add_action('wp_ajax_nopriv_ajaxapplucoupon', 'implement_ajax_apply_coupon');

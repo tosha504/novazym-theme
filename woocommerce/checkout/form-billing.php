@@ -22,11 +22,11 @@ defined('ABSPATH') || exit;
 <div class="woocommerce-billing-fields">
 	<?php if (wc_ship_to_billing_address_only() && WC()->cart->needs_shipping()) : ?>
 
-		<h3><?php esc_html_e('1.Billing &amp; Shipping', 'hashimoto'); ?></h3>
+		<h3><?php esc_html_e('1.Billing &amp; Shipping', 'novazym'); ?></h3>
 
 	<?php else : ?>
 
-		<h3><?php esc_html_e('1.Billing details', 'hashimoto'); ?></h3></br>
+		<h3><?php esc_html_e('1.Billing details', 'novazym'); ?></h3></br>
 
 	<?php endif; ?>
 

@@ -27,7 +27,7 @@ if (!$checkout->is_registration_enabled() && $checkout->is_registration_required
 	echo esc_html(apply_filters('woocommerce_checkout_must_be_logged_in_message', __('You must be logged in to checkout.', 'woocommerce')));
 	return;
 }
-$order_button_text = __('I buy and pay', 'hashimoto');
+$order_button_text = __('I buy and pay', 'novazym');
 ?>
 
 <form name="checkout" method="post" class="checkout woocommerce-checkout" action="<?php echo esc_url(wc_get_checkout_url()); ?>" enctype="multipart/form-data">
@@ -37,7 +37,7 @@ $order_button_text = __('I buy and pay', 'hashimoto');
 			<?php do_action('woocommerce_checkout_billing'); ?>
 			<?php do_action('woocommerce_checkout_shipping'); ?>
 
-			<h3 class="stepCheckout-title"><?php echo __('2. Shipping', 'hashimoto'); ?></h3>
+			<h3 class="stepCheckout-title"><?php echo __('2. Shipping', 'novazym'); ?></h3>
 			<?php
 			if (WC()->cart->needs_shipping() && WC()->cart->show_shipping()) {	?>
 				<div class="ajax-shipp-method">
@@ -48,7 +48,7 @@ $order_button_text = __('I buy and pay', 'hashimoto');
 			<?php } else {
 				echo '<p class="shipping-virtual">Produkt cyfrowy zostanie wysłany na podany adres e-mail po zrealizowaniu zamówienia.</p>';
 			} ?>
-			<h3 class="stepCheckout-title"><?php echo __('3. Payments', 'hashimoto'); ?></h3>
+			<h3 class="stepCheckout-title"><?php echo __('3. Payments', 'novazym'); ?></h3>
 			<?php do_action('custom_payment_position'); ?>
 		</div>
 		<?php do_action('woocommerce_checkout_after_customer_details'); ?>
@@ -58,7 +58,7 @@ $order_button_text = __('I buy and pay', 'hashimoto');
 		<?php do_action('woocommerce_checkout_before_order_review_heading'); ?>
 		<?php do_action('woocommerce_checkout_before_order_review'); ?>
 		<div>
-			<h3 id="order_review_heading"><?php esc_html_e('4.Your order', 'hashimoto'); ?></h3>
+			<h3 id="order_review_heading"><?php esc_html_e('4.Your order', 'novazym'); ?></h3>
 			<br>
 			<?php do_action('woocommerce_checkout_order_review'); ?>
 			<div class="form-row place-order">
@@ -79,7 +79,7 @@ $order_button_text = __('I buy and pay', 'hashimoto');
 									<input type="text" name="coupon_code" class="input-text" placeholder="<?php esc_attr_e('Coupon code', 'woocommerce'); ?>" id="checkout_coupon_code" value="" />
 								</div>
 								<div class="couponBtn">
-									<a href="#apply" id="checkout_apply_coupon" class="btn btn-round text-uppercase"><?php esc_attr_e('Apply', 'hashimoto'); ?> </a>
+									<a href="#apply" id="checkout_apply_coupon" class="btn btn-round text-uppercase"><?php esc_attr_e('Apply', 'novazym'); ?> </a>
 								</div>
 							</div>
 						</div>

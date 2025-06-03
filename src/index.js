@@ -99,6 +99,31 @@
     ]
   })
 
+
+  jQuery(document).ready(function () {
+    jQuery('#checkout_apply_coupon').click(function (ev) {
+      ev.preventDefault();
+      var code = jQuery('#checkout_coupon_code').val();
+      var data = {
+        action: 'ajaxapplucoupon',
+        coupon_code: code
+      };
+
+      jQuery.post(wc_checkout_params.ajax_url, data, function (returned_data) {
+        if (returned_data.result == 'error') {
+          console.log(returned_data);
+
+          alert('error');
+          jQuery('p.resoult-coupon').html(returned_data.message);
+        } else {
+          setTimeout(function () {
+            jQuery(document.body).trigger('update_checkout');
+          }, 500);
+        }
+      })
+    });
+  });
+
   jQuery(document).on('click', '.question', function (e) {
     console.log(jQuery(this).parent().siblings().children('div.answer').is(':visible'));
     if (jQuery(this).parent().siblings().children('div.answer').is(':visible')) {
