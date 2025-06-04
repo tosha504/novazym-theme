@@ -13,7 +13,7 @@ get_header(); ?>
   $categories = get_categories(); ?>
   <div class="categories-wrap">
     <div class="container">
-      <h2 class="categories-title">Kategorie:</h2>
+      <h2 class="categories-title">Kategorie</h2>
       <ul class="posts-categories">
         <li>
           <a class="button button__secondary" href="<?php echo esc_url(home_url('/blog')); ?>">

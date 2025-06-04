@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Template for displaying category archive pages
+ * Template for displaying tag archive pages
  * @package novazyn
  */
 get_header();
