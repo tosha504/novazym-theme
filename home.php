@@ -21,7 +21,7 @@ get_header(); ?>
         </li>
         <?php foreach ($categories as $category) { ?>
           <li><a class="button button__secondary" href="<?php echo esc_url(get_category_link($category->term_id)); ?>">
-              <?php echo  $category->name ?></a>
+              <?php echo $category->name ?></a>
           </li>
         <?php }
         ?>

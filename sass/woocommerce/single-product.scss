@@ -78,7 +78,7 @@ body {
               flex: 1 1 35%;
               border: 1px solid var(--text-60);
               justify-content: space-between;
-              border-radius: 50px;
+              border-radius: 6px;
               margin-right: 20px !important;
               background-color: var(--white);
               overflow: hidden;
@@ -93,15 +93,11 @@ body {
               }
 
               button {
-                // background-color: var(--primary-100);
                 background: none;
                 flex: 1 1 30%;
-                // border: 1px solid var(--text-60);
                 max-width: 100%;
                 width: 15px;
                 padding: 10px;
-                // border-radius: 50px;
-                // border: none;
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -123,7 +119,7 @@ body {
 
               input {
                 max-width: 100%;
-                width: 35px;
+                width: 60px;
                 flex: 1 1 20%;
                 pointer-events: none;
                 text-align: center;
@@ -137,15 +133,15 @@ body {
 
               /* Firefox */
               input[type="number"] {
-                // -moz-appearance: textfield;
-                // pointer-events: none;
+                -moz-appearance: textfield;
+                pointer-events: none;
                 padding: 0;
               }
             }
 
             .single_add_to_cart_button {
               flex: 1 1 85%;
-              border-radius: 50px;
+              border-radius: 10px;
               background-color: var(--primary-100);
               padding: 10px 30px;
               font-weight: 600;

@@ -28,7 +28,7 @@ button {
     border: 2px solid var(--secondary-100);
     color: var(--secondary-100);
     font-weight: 600;
-    border-radius: 50px;
+    border-radius: 10px;
     @media (hover: hover) {
       &:hover {
         color: var(--white);
