@@ -1,0 +1,306 @@
+@use "./../components/_breakpoints" as b;
+@use "sass:map";
+body {
+  &.woocommerce-account {
+    main {
+      padding: 50px 0;
+      input {
+        background-color: var(--white);
+      }
+      .container {
+        background-color: var(--supporting-10);
+        border-radius: 30px;
+        padding: 20px 15px;
+        @media (min-width: map.get(b.$grid-breakpoints, md)) {
+          padding: 50px;
+        }
+
+        #customer_login {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 20px;
+
+          .u-column1,
+          .u-column2 {
+            @media (min-width: map.get(b.$grid-breakpoints, md)) {
+              flex: 1 1 calc(48% - 20px);
+            }
+
+            .woocommerce-form {
+              max-width: 400px;
+              padding: 20px 0;
+
+              .woocommerce-form-login__rememberme {
+                display: block;
+                margin-bottom: 10px;
+              }
+            }
+          }
+        }
+
+        &.my-account-tnl {
+          display: flex;
+          gap: 20px;
+          flex-wrap: wrap;
+
+          .woocommerce-MyAccount-navigation-tnl,
+          .woocommerce-MyAccount-content-tnl {
+            flex: 1 1 100%;
+            section {
+              padding: 10px 0;
+            }
+          }
+
+          .woocommerce-MyAccount-navigation-tnl {
+            @media (max-width: map.get(b.$grid-breakpoints, md)) {
+              overflow-x: auto;
+              border-bottom: 1px solid var(--text-100);
+              padding-bottom: 10px;
+            }
+            @media (min-width: map.get(b.$grid-breakpoints, md)) {
+              flex: 0 1 calc(20% - 20px);
+            }
+
+            ul {
+              list-style: none;
+              display: flex;
+              gap: 10px;
+              flex-direction: column;
+
+              li {
+                flex: 1 1 100%;
+                &.is-active {
+                  font-weight: 700;
+                  @media (hover: hover) {
+                    cursor: pointer;
+                  }
+                }
+
+                &.woocommerce-MyAccount-navigation-link--customer-logout {
+                  a {
+                    border-bottom: 1px solid var(--text-100);
+                  }
+                }
+              }
+            }
+          }
+
+          .woocommerce-MyAccount-content-tnl {
+            @media (min-width: map.get(b.$grid-breakpoints, md)) {
+              flex: 1 1 calc(80% - 20px);
+            }
+
+            p {
+              &:nth-child(2) {
+                margin-bottom: 20px;
+              }
+            }
+
+            form {
+              p {
+                margin: 5px 0;
+              }
+            }
+
+            fieldset {
+              border: none;
+            }
+
+            a {
+              font-weight: 900;
+              color: var(--primary-theme);
+              &.edit {
+                font-size: 12px;
+              }
+            }
+
+            .woocommerce-Addresses {
+              display: flex;
+              flex-wrap: wrap;
+              gap: 20px;
+              @media (min-width: map.get(b.$grid-breakpoints, md)) {
+                gap: 100px;
+              }
+              .u-column1 {
+                flex: 1 1 100%;
+                @media (min-width: map.get(b.$grid-breakpoints, md)) {
+                  flex: 0 1 calc(34% - 100px);
+                }
+              }
+
+              .woocommerce-Address-title {
+                margin-bottom: 20px;
+
+                .edit {
+                  // color: red;
+                  font-weight: 500;
+                  // border-bottom: 1px solid red;
+                }
+              }
+            }
+
+            .wc-forward {
+              margin-top: 10px;
+              color: var(--text-100);
+              border: 1px solid var(--text-100);
+            }
+            .shop_table.order_details {
+              width: 100%;
+              thead {
+                tr {
+                  th {
+                    border-bottom: 1px solid var(--text-100);
+                    text-align: end;
+                    padding: 10px 0;
+                    &:first-child {
+                      text-align: left;
+                    }
+                  }
+                }
+              }
+
+              tbody,
+              tfoot {
+                tr {
+                  td,
+                  th {
+                    border-bottom: 1px solid var(--text-100);
+                    padding: 10px 0px;
+                    text-align: end;
+                    &:first-child {
+                      text-align: left;
+                    }
+                  }
+                }
+              }
+            }
+            .woocommerce-MyAccount-orders {
+              display: flex;
+              flex-wrap: wrap;
+              gap: 20px;
+              flex-direction: column;
+              thead,
+              tbody {
+                tr {
+                  display: flex;
+                  border-bottom: 1px solid var(--text-100);
+                  padding-bottom: 10px;
+                  @media (max-width: map.get(b.$grid-breakpoints, md)) {
+                    flex-direction: column;
+                  }
+                  th,
+                  td {
+                    flex: 0 1 25%;
+                    text-align: center;
+                    display: flex;
+                    align-items: center;
+                    padding: 0 10px;
+                    text-align: start;
+                    &.woocommerce-orders-table__cell-order-total {
+                      flex-direction: column;
+                      justify-content: center;
+
+                      .woocommerce-Price-amount {
+                        font-weight: 900;
+                      }
+                    }
+
+                    @media (max-width: map.get(b.$grid-breakpoints, md)) {
+                      &::before {
+                        content: attr(data-title);
+                        float: left;
+                        padding-top: 3px;
+                        color: var(--brdcolor-gray-900);
+                        text-transform: uppercase;
+                        font-weight: 600;
+                        font-size: 12px;
+                        margin-right: auto;
+                      }
+                    }
+                  }
+
+                  td {
+                    font-size: 14px;
+                    @media (max-width: map.get(b.$grid-breakpoints, md)) {
+                      padding: 5px;
+                    }
+                    .woocommerce-Price-amount {
+                      margin-right: 10px;
+                    }
+
+                    .button {
+                      padding: 0;
+                      justify-content: end;
+                      @media (min-width: map.get(b.$grid-breakpoints, md)) {
+                        justify-content: start;
+                      }
+                    }
+                  }
+                }
+              }
+
+              thead {
+                flex: 1 1 calc(10% - 20px);
+                @media (max-width: map.get(b.$grid-breakpoints, md)) {
+                  display: none;
+                }
+              }
+
+              tbody {
+                flex: 1 1 calc(80% - 20px);
+              }
+            }
+          }
+
+          .woocommerce-order-details,
+          .woocommerce-customer-details {
+            h2 {
+              margin-bottom: 2em;
+            }
+          }
+
+          .woocommerce-customer-details {
+            address {
+              @media (max-width: map.get(b.$grid-breakpoints, md)) {
+                margin-bottom: 2em;
+              }
+            }
+          }
+        }
+
+        h2 {
+          color: var(--secondary-100);
+        }
+
+        form {
+          border: none;
+          button {
+            background-color: var(--primary-100);
+            color: var(--white);
+            font-weight: 600;
+            border: none;
+            font-size: 14px;
+            transition: 0.25s;
+            border-radius: 6px;
+            @media (hover: hover) {
+              &:hover {
+                cursor: pointer;
+                background-color: var(--primary-90);
+              }
+            }
+          }
+
+          p,
+          .form-row {
+            font-size: 14px;
+            margin: 15px 0;
+          }
+
+          a {
+            font-weight: 700;
+          }
+        }
+      }
+    }
+  }
+}
