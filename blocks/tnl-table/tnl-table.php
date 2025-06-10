@@ -21,6 +21,6 @@ if (!empty($block['anchor'])) {
 $title = !empty(get_field('title')) ? "<div class='tnl-table__title'>" . get_field('title') . "</div> " : "";
 $content = !empty(get_field('description')) ? "<div class='tnl-table__content'>" . get_field('description') . "</div> " : "";
 $rows = get_field('tabel');
-$table_titles = get_sub_field('table_titles');
+$table_titles = get_field('table_titles');
 
 tnl_table_render_callback($title, $content, $table_titles, $rows);

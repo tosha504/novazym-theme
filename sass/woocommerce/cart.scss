@@ -440,6 +440,14 @@ body {
       max-width: 50%;
       margin-left: auto;
     }
+    td {
+      flex: 1 1 calc(100% / 6);
+      @media (max-width: map.get(b.$grid-breakpoints, md)) {
+        &::before {
+          content: "";
+        }
+      }
+    }
     #shipping_method {
       list-style: none;
       display: flex;

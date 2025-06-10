@@ -36,7 +36,6 @@ body {
           }
 
           h1 {
-            font-size: clamp(25px, 3vw, 30px);
             display: flex;
             align-content: inherit;
             gap: 20px;
@@ -119,6 +118,9 @@ body {
             display: flex;
             gap: 30px 50px;
             flex-wrap: wrap;
+            @media (min-width: map.get(b.$grid-breakpoints,lg )) {
+              flex-wrap: nowrap;
+            }
             @media (min-width: map.get(b.$grid-breakpoints, xl)) {
               gap: 30px 100px;
             }
@@ -170,7 +172,7 @@ body {
             .right {
               flex: 1 1 100%;
               @media (min-width: map.get(b.$grid-breakpoints, lg)) {
-                flex: 1 1 calc(50% - 100px);
+                max-width: calc(50% - 25px);
               }
             }
 
@@ -191,10 +193,12 @@ body {
               border-radius: 10px;
               height: fit-content;
 
-              @media (min-width: map.get(b.$grid-breakpoints, md)) {
-                padding: 40px;
+              @media (min-width: map.get(b.$grid-breakpoints, lg)) {
                 position: sticky;
                 top: 170px;
+              }
+              @media (min-width: map.get(b.$grid-breakpoints, xl)) {
+                padding: 40px;
               }
 
               #place_order {
@@ -224,7 +228,10 @@ body {
                   margin-bottom: 20px;
                   // gap: 10px;
                   tr {
-                    gap: 20px;
+                    gap: 5px;
+                    @media (min-width: map.get(b.$grid-breakpoints, sm)) {
+                      gap: 20px;
+                    }
                     &.cart_item {
                       display: flex;
                       padding: 20px 10px;
@@ -238,6 +245,10 @@ body {
                             border-radius: 20px;
                             object-fit: cover;
                             max-width: 100px;
+                            @media (max-width: map.get(b.$grid-breakpoints, sm)) {
+                              margin-right: 10px;
+                              max-width: 50px;
+                            }
                           }
                         }
 
@@ -248,9 +259,13 @@ body {
                             color: var(--text-100);
                             line-height: 1.3;
                             font-weight: 600;
+                            @media (max-width: map.get(b.$grid-breakpoints, sm)) {
+                              font-size: 14px;
+                            }
                           }
 
                           .product-quantity {
+                            margin-top: 10px;
                             .quantity {
                               display: flex;
                               flex: 1 1 15%;
@@ -321,6 +336,9 @@ body {
                             bdi {
                               font-weight: 600;
                               color: var(--secondary-100);
+                              @media (max-width: map.get(b.$grid-breakpoints, sm)) {
+                                font-size: 12px;
+                              }
                               .woocommerce-Price-currencySymbol {
                                 margin-left: 5px;
                               }

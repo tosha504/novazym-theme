@@ -15,10 +15,13 @@ get_header();
 	<section class="error">
 		<div class="container">
 			<div class="error_content">
-				<h1 class="error_content-title"><?php esc_html_e('Wygląda na to, że w tej lokalizacji nic nie znaleziono. Może spróbuj jednego z poniższych linków lub wyszukiwania?', 'teatr'); ?></h1>
+				<div class="error_number">
+					404
+				</div>
+				<h1 class="error_content-title"><?php esc_html_e('Niestety nie udało się odnaleźć tej strony', 'teatr'); ?></h1>
 				<div class="e404">
-					<a href="<?php echo esc_url(home_url('/')) ?>">
-						404
+					<a class="button button__secondary" href="<?php echo esc_url(home_url('/')) ?>">
+						Wróć do strony głównej
 					</a>
 				</div>
 			</div><!-- .page-content -->

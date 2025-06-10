@@ -54,6 +54,10 @@ body {
       background-color: var(--primary-90);
     }
   }
+
+  .ec-v-form-holder.ec-v-form-holder-basic {
+    max-width: 100% !important;
+  }
 }
 
 .fixed-page {
@@ -177,10 +181,13 @@ ul {
             }
           }
 
-          .woocommerce-Price-amount.amount {
-            bdi {
-              color: var(--text-100);
-              font-weight: 600;
+          .xoo-wsc-qty-price {
+            font-size: 14px;
+            .woocommerce-Price-amount.amount {
+              font-size: 14px;
+              bdi {
+                color: var(--text-100);
+              }
             }
           }
         }
@@ -207,6 +214,7 @@ ul {
           .xoo-wsc-ft-amt.xoo-wsc-ft-amt-subtotal {
             display: flex;
             span {
+              color: var(--text-100);
               font-size: 25px;
               font-weight: 600;
             }

@@ -18,7 +18,20 @@
 	<meta charset="<?php bloginfo('charset'); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
-
+	<script>
+		(function(w, d, s, o, f, js, fjs) {
+			w['ecm-widget'] = o;
+			w[o] = w[o] || function() {
+				(w[o].q = w[o].q || []).push(arguments)
+			};
+			js = d.createElement(s), fjs = d.getElementsByTagName(s)[0];
+			js.id = '3-b6fcc542fb021c84fdaff536dd0a74a1';
+			js.dataset.a = 'novazym';
+			js.src = f;
+			js.async = 1;
+			fjs.parentNode.insertBefore(js, fjs);
+		}(window, document, 'script', 'ecmwidget', 'https://d70shl7vidtft.cloudfront.net/widget.js'));
+	</script>
 	<?php wp_head(); ?>
 </head>
 

@@ -112,7 +112,7 @@ $socials = get_field('socials', 'options'); ?>
     </div>
   </div>
   <div class="footer__bottom">
-    <div class="container"> Novazyn © Wykonanie:<a href="https://thenewlook.pl/" title="Strony internetowe WordPress Sklepy internetowe WooCommerce" target="_blank"> THE NEW LOOK</a></div>
+    <div class="container"> Novazym © Wykonanie:<a href="https://thenewlook.pl/" title="Strony internetowe WordPress Sklepy internetowe WooCommerce" target="_blank"> THE NEW LOOK</a></div>
   </div>
 </footer><!-- #colophon -->
 </div><!-- #page -->
