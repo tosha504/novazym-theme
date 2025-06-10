@@ -6,8 +6,9 @@
  * @package  bht-tnl
  */
 defined('ABSPATH') || exit;
-function tnl_table_render_callback($title = null, $content = null, $rows)
+function tnl_table_render_callback($title = null, $content = null, $table_titles = null, $rows)
 {
+
 ?>
   <!-- tnl-table end -->
   <section class="tnl-table">
@@ -15,17 +16,20 @@ function tnl_table_render_callback($title = null, $content = null, $rows)
       <?php echo $title;
       echo $content; ?>
       <div id="acf-wrapper">
-        <div class="acf-table-grid">
-          <div class="acf-cell">Typ nowotworu</div>
-          <div class="acf-cell">Liczba genów</div>
-          <div class="acf-cell">Przykładowe geny (m.in.)
-            <div class="pagination-buttons" id="pagination-controls">
-              <button id="prevBtn"></button>
-              <button id="nextBtn"></button>
-            </div>
+        <?php if ($table_titles !== null) { ?>
+          <div class="acf-table-grid">
+            <?php foreach ($table_titles as $key => $table_title) { ?>
+              <div class="acf-cell"><?php echo esc_html($table_title['title']); ?>
+                <?php if ($key == 2) { ?>
+                  <div class="pagination-buttons" id="pagination-controls">
+                    <button id="prevBtn"></button>
+                    <button id="nextBtn"></button>
+                  </div>
+                <?php } ?>
+              </div>
+            <?php } ?>
           </div>
-
-        </div>
+        <?php } ?>
         <div class="acf-table-grid" id="acf-grid">
         </div>
 
